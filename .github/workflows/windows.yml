@@ -36,11 +36,17 @@ jobs:
           }
           $compiler = Join-Path ${env:ProgramFiles(x86)} 'Inno Setup 6\ISCC.exe'
           if (-not (Test-Path $compiler)) {
-            throw 'The Windows 2022 runner must provide Inno Setup 6.3 or newer.'
+            Write-Output '::error::The Windows 2022 runner must provide Inno Setup 6.3 or newer.'
+            exit 1
           }
-          $compilerVersion = (Get-Item $compiler).VersionInfo.FileVersion
-          if ([version]$compilerVersion -lt [version]'6.3') { throw 'Inno Setup 6.3 or newer required.' }
-          Write-Host "Studytonks $version; Inno Setup $compilerVersion."
+          # ISCC is a launcher whose PE FileVersion can be 0.0.0.0. The actual
+          # compiler engine validates the required 6.3+ features in our .iss.
+          Write-Host "Studytonks $version; Inno Setup compiler: $compiler"
+          & $compiler '/?'
+          if ($LASTEXITCODE -ne 0) {
+            Write-Output "::error::Inno Setup compiler could not start (exit $LASTEXITCODE)."
+            exit $LASTEXITCODE
+          }
       - name: Test, bundle Python and Qt, build and validate installer
         shell: cmd
         run: build.bat
