@@ -101,7 +101,7 @@ dist/release/
 
 Para gerar somente a alternativa portátil, use `build.bat --app-only`. Extraia o ZIP inteiro e abra `Studytonks/Studytonks.exe`; preserve a pasta `_internal`. O executável GUI não abre terminal. O empacotamento é one-folder, para maior confiabilidade com Qt, e o instalador reúne essa pasta em um único arquivo de download. Binários novos usam a pasta de dados existente.
 
-O workflow `.github/workflows/windows.yml` executa os testes em um runner Windows, cria os binários, instala/atualiza a aplicação em uma pasta de teste, abre o Qt empacotado e desinstala verificando a preservação de dados. Tags `v*` precisam corresponder à versão do `pyproject.toml`; a release pública só é criada após os testes e upload de todos os arquivos. Para a versão atual, a tag é `v1.0.1`.
+O workflow `.github/workflows/windows.yml` executa os testes em um runner Windows, cria os binários, instala/atualiza a aplicação em uma pasta de teste, abre o Qt empacotado e desinstala verificando a preservação de dados. Tags `v*` precisam corresponder à versão do `pyproject.toml`; a release pública só é criada após os testes e upload de todos os arquivos. Para a versão atual, a tag é `v1.0.2`.
 
 O workflow de site confirma os assets publicados antes de habilitar o download. Ele publica `site/` no GitHub Pages; se a configuração do repositório não permitir ativação automática, escolha **Settings → Pages → Source: GitHub Actions**. Nenhum valor pessoal ou credencial vai para os arquivos do site.
 

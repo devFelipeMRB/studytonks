@@ -1,7 +1,7 @@
 ; Compile on Windows with Inno Setup 6.3+ after the PyInstaller one-folder build.
 ; No downloads, Python installation, administrator privilege or startup changes.
 #ifndef AppVersion
-  #define AppVersion "1.0.1"
+  #define AppVersion "1.0.2"
 #endif
 
 [Setup]

@@ -1,6 +1,6 @@
 [project]
 name = "studytonks"
-version = "1.0.1"
+version = "1.0.2"
 requires-python = ">=3.12"
 description = "Offline desktop study bootcamp manager"
 [tool.pytest.ini_options]

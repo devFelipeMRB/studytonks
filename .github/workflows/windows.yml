@@ -26,7 +26,7 @@ jobs:
           architecture: x64
           cache: pip
           cache-dependency-path: requirements-lock.txt
-      - name: Check release version and Inno Setup compiler
+      - name: Check release version and compiler presence
         shell: pwsh
         run: |
           $version = python -c "import pathlib,tomllib; print(tomllib.loads(pathlib.Path('pyproject.toml').read_text(encoding='utf-8'))['project']['version'])"
@@ -39,14 +39,9 @@ jobs:
             Write-Output '::error::The Windows 2022 runner must provide Inno Setup 6.3 or newer.'
             exit 1
           }
-          # ISCC is a launcher whose PE FileVersion can be 0.0.0.0. The actual
-          # compiler engine validates the required 6.3+ features in our .iss.
+          # The real compilation below validates the engine and .iss features;
+          # launcher PE metadata and help-command exit codes are not readiness.
           Write-Host "Studytonks $version; Inno Setup compiler: $compiler"
-          & $compiler '/?'
-          if ($LASTEXITCODE -ne 0) {
-            Write-Output "::error::Inno Setup compiler could not start (exit $LASTEXITCODE)."
-            exit $LASTEXITCODE
-          }
       - name: Test, bundle Python and Qt, build and validate installer
         shell: cmd
         run: build.bat
