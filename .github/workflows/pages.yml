@@ -1,0 +1,59 @@
+name: Studytonks download website
+
+on:
+  push:
+    branches: ['development/studytonks-desktop']
+    paths: ['site/**', 'tools/site_manifest.py', '.github/workflows/pages.yml']
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      release_tag:
+        description: Published release to confirm before enabling downloads
+        type: string
+        default: ''
+        required: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: studytonks-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate download states and JavaScript
+        run: |
+          node --check site/app.js
+          node site/verify.js
+      - name: Confirm actual published installer
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.release_tag || '' }}
+        run: |
+          if [ -n "$RELEASE_TAG" ]; then
+            python3 tools/site_manifest.py --tag "$RELEASE_TAG"
+          else
+            python3 tools/site_manifest.py
+          fi
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - name: Publish download website
+        id: deployment
+        uses: actions/deploy-pages@v4

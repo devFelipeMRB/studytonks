@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Organize matérias, acompanhe suas notas e transforme estudo em progresso. Studytonks é um aplicativo desktop offline para Windows, com seus dados no seu computador.">
+    <meta name="theme-color" content="#FAF9F6">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self' https://api.github.com; base-uri 'self'; form-action 'none'">
+    <title>Studytonks — Learn. Track. Master.</title>
+    <link rel="icon" href="assets/studytonks.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="header">
+      <div class="container header-inner">
+        <a class="brand" href="#inicio" aria-label="Studytonks — início">
+          <img src="assets/studytonks.svg" width="38" height="38" alt="">
+          <span>Studytonks<span class="brand-dot">.</span></span>
+        </a>
+        <nav aria-label="Navegação principal">
+          <a href="#recursos">O aplicativo</a>
+          <a href="#instalar">Como instalar</a>
+          <a href="#perguntas">Perguntas</a>
+        </nav>
+        <div class="header-actions">
+          <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Ativar tema escuro" title="Alterar tema">
+            <svg class="moon" width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.8 13.3A9 9 0 0 1 10.7 3.2 9 9 0 1 0 20.8 13.3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+            <svg class="sun" width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </button>
+          <a class="button button-small button-ink" href="#download">Baixar para Windows <svg class="external-arrow" width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="hero container" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Seu espaço de estudos. No seu computador.</p>
+          <h1 id="hero-title">Aprenda com foco.<br>Acompanhe seu<br><span>próximo nível.</span></h1>
+          <p class="hero-description">Das primeiras anotações àquela nota que você queria. Organize seu bootcamp, registre cada conquista e veja seu aprendizado evoluir.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#download"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Conheça e instale</a>
+            <a class="text-link" href="#recursos">Explore o aplicativo <span aria-hidden="true">→</span></a>
+          </div>
+          <p class="platform"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="m1 3 6-.8v5.3H1zm7-1 7-1v6.5H8zM1 8.5h6v5.3L1 13zm7 0h7V15l-7-1z"/></svg> Windows 10 e 11 · 64 bits <span class="divider" aria-hidden="true">/</span> Sem conta. Sem mensalidade.</p>
+        </div>
+        <div class="hero-art" aria-label="Studytonks: organização, estudo e evolução">
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+          <div class="art-book"><img src="assets/studytonks.svg" width="200" height="200" alt="Ícone Studytonks: livro com gráfico ascendente"></div>
+          <div class="art-card card-focus"><span class="art-icon"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="13" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M12 9v4l3 2M9 2h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><div><strong>Uma coisa de cada vez.</strong><span>Seu tempo merece atenção.</span></div></div>
+          <div class="art-card card-growth"><div class="growth-chart" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div><div><span>Pequenos passos.</span><strong>Progresso que fica.</strong></div></div>
+          <p class="art-caption">Learn. Track. Master.</p>
+        </div>
+      </section>
+
+      <div class="container promise-strip" aria-label="Características principais">
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m4 12 5 5L20 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Funciona 100% offline</span>
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 4 7v5c0 5 8 9 8 9s8-4 8-9V7l-8-4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Seus dados são seus</span>
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20V5m0 15h16M8 15l4-4 3 2 5-7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Gráficos com notas reais</span>
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h6l2 2h8v12H4V6Zm0 0V4h7l2 2h7v2" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Backup sem complicação</span>
+      </div>
+
+      <section class="section container" id="recursos" aria-labelledby="features-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">MAIS CLAREZA, MENOS DISTRAÇÃO</p><h2 id="features-title">Todo o seu estudo.<br>Um lugar para evoluir.</h2></div>
+          <p class="section-description">Uma rotina de estudos tem muitas partes. O Studytonks mantém todas conectadas, para você se concentrar no que está aprendendo.</p>
+        </div>
+        <figure class="app-preview">
+          <div class="preview-chrome"><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>Studytonks · Dashboard</span><span class="preview-label">INTERFACE REAL</span></div>
+          <img src="assets/dashboard.png" width="1240" height="820" loading="lazy" alt="Dashboard real do Studytonks em uma instalação nova: sidebar com as áreas do aplicativo, estatísticas vazias e botão Nova matéria.">
+          <figcaption>Você começa com uma página em branco. O progresso que aparece aqui será o seu.</figcaption>
+        </figure>
+        <div class="features-grid">
+          <article class="feature"><div class="feature-icon"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h6l2 2h8v14H4V4Zm4 6h8m-8 4h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Organize do seu jeito</h3><p>Matérias, sessões e subsessões em uma árvore simples. Crie o seu plano, defina metas e mantenha tudo no lugar.</p><span class="feature-note">Uma estrutura para cada assunto</span></article>
+          <article class="feature"><div class="feature-icon"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20V4m0 16h16M7 16l4-5 4 2 5-8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="11" r="1.5" fill="currentColor"/></svg></div><h3>Entenda a sua evolução</h3><p>Registre avaliações por pontos ou porcentagem. Gráficos interativos mostram notas, tendências e a distância para sua meta.</p><span class="feature-note">Cada avaliação conta uma vez</span></article>
+          <article class="feature"><div class="feature-icon"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h16v16H4V4Zm4 5h8m-8 4h8m-8 4h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Guarde suas descobertas</h3><p>Anote com títulos, listas, negrito e trechos de código. O salvamento automático acompanha o seu raciocínio.</p><span class="feature-note">Anotações ligadas às subsessões</span></article>
+          <article class="feature"><div class="feature-icon"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="13" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M12 9v4l3 2M9 2h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><h3>Faça seu tempo render</h3><p>Inicie o cronômetro, pause quando precisar e salve o tempo estudado. Acompanhe as horas por semana e por mês.</p><span class="feature-note">Pausas ficam fora da contagem</span></article>
+          <article class="feature"><div class="feature-icon"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 3v4m8-4v4M4 10h16m-11 5 2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Transforme plano em rotina</h3><p>Monte bootcamps com metas de horas e aprovação. Use a agenda e os lembretes do Windows para manter o ritmo.</p><span class="feature-note">Lembretes com o app em execução</span></article>
+          <article class="feature"><div class="feature-icon"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 4 7v5c0 5 8 9 8 9s8-4 8-9V7l-8-4Zm-4 9 3 3 5-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Tenha controle dos seus dados</h3><p>Tudo fica em arquivos locais. Exporte backups ZIP, restaure quando precisar e atualize o aplicativo preservando seu histórico.</p><span class="feature-note">Sem cadastro ou sincronização na nuvem</span></article>
+        </div>
+      </section>
+
+      <section class="install-section" id="instalar" aria-labelledby="install-title">
+        <div class="container">
+          <div class="section-heading"><div><p class="eyebrow">DO DOWNLOAD AO PRIMEIRO ESTUDO</p><h2 id="install-title">Menos configuração.<br>Mais aprendizado.</h2></div><p class="section-description">O instalador reúne o aplicativo e as bibliotecas necessárias. Você não precisa instalar Python ou executar comandos.</p></div>
+          <ol class="steps">
+            <li><span class="step-number">01</span><h3>Baixe o instalador</h3><p>Escolha a versão para Windows 10 ou 11, 64 bits. Salve <code>Studytonks-Setup.exe</code> no seu computador.</p></li>
+            <li><span class="step-number">02</span><h3>Instale e abra</h3><p>Abra o arquivo, escolha a pasta e conclua a instalação. As dependências já estão no pacote; a instalação funciona offline.</p></li>
+            <li><span class="step-number">03</span><h3>Crie sua primeira matéria</h3><p>Dê um nome, organize os assuntos e comece a estudar. Seu histórico cresce com as anotações, horas e notas que você registrar.</p></li>
+          </ol>
+          <div class="download-card" id="download">
+            <div class="download-intro"><img src="assets/studytonks.svg" width="65" height="65" alt=""><div><p class="eyebrow">SEU PRÓXIMO CAPÍTULO</p><h2>Comece com Studytonks.</h2><p>Windows 10 / 11 · x64 · Gratuito · Sem conta</p></div></div>
+            <div class="download-actions">
+              <a class="button button-primary download-main" id="installer-download" href="https://github.com/devFelipeMRB/studytonks/releases" target="_blank" rel="noopener noreferrer"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="installer-label">Ver versões no GitHub</span></a>
+              <p class="release-status" id="release-status" role="status">Instalador em preparação · confira as versões publicadas.</p>
+              <a class="source-download" href="https://github.com/devFelipeMRB/studytonks/archive/refs/heads/development/studytonks-desktop.zip" target="_blank" rel="noopener noreferrer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Baixar arquivos do projeto (.zip)</a>
+              <a class="portable-link" id="portable-download" href="https://github.com/devFelipeMRB/studytonks/releases" target="_blank" rel="noopener noreferrer" hidden>Prefere não instalar? Baixe a versão portátil <svg class="external-arrow" width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+          <p class="download-footnote">A disponibilidade do instalador é confirmada pela publicação no GitHub. O código-fonte está <a href="https://github.com/devFelipeMRB/studytonks/tree/development/studytonks-desktop" target="_blank" rel="noopener noreferrer">aberto para você consultar <svg class="external-arrow" width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>.</p>
+          <noscript><p class="noscript-note">JavaScript está desativado. Veja os arquivos disponíveis na <a href="https://github.com/devFelipeMRB/studytonks/releases">página de versões do GitHub</a>.</p></noscript>
+        </div>
+      </section>
+
+      <section class="section container faq-section" id="perguntas" aria-labelledby="faq-title">
+        <div class="faq-intro"><p class="eyebrow">ANTES DE COMEÇAR</p><h2 id="faq-title">Tudo claro?</h2><p>Algumas respostas para você instalar com tranquilidade.</p><a class="text-link" href="https://github.com/devFelipeMRB/studytonks" target="_blank" rel="noopener noreferrer">Documentação no GitHub <svg class="external-arrow" width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        <div class="faq-list">
+          <details><summary>Preciso instalar Python ou outras dependências?</summary><p>Para usar a versão compilada, não. O instalador inclui Python, Qt e as bibliotecas do aplicativo. Depois de baixar o arquivo, a instalação e o uso funcionam offline. Python só é necessário se você quiser executar ou modificar o código-fonte.</p></details>
+          <details><summary>Onde ficam minhas matérias, notas e avaliações?</summary><p>No seu computador, em <code>%APPDATA%\Studytonks\</code>. Os dados ficam separados do executável. Você pode abrir essa pasta pelas Configurações, criar backups e exportar um ZIP. Não existe conta, servidor ou banco de dados na nuvem.</p></details>
+          <details><summary>O aplicativo precisa ficar aberto para os lembretes?</summary><p>Sim. Os lembretes locais exigem o aplicativo em execução, inclusive minimizado na bandeja. Se você sair completamente, ele não enviará notificações. O Windows pode silenciá-las conforme suas preferências. Iniciar com o Windows é uma opção que só é ativada com sua autorização.</p></details>
+          <details><summary>Como faço para atualizar sem perder meus estudos?</summary><p>Crie um backup nas Configurações e instale a versão mais recente. Seus arquivos continuam em <code>%APPDATA%\Studytonks\</code>, fora da pasta do programa. A desinstalação também preserva essa pasta. Guarde seus backups em um local seguro: eles não são criptografados.</p></details>
+          <details><summary>Qual a diferença entre instalador e versão portátil?</summary><p>O instalador configura a pasta do programa e os atalhos, com opção de desinstalação. Na versão portátil, você extrai o ZIP e abre <code>Studytonks.exe</code>; mantenha todos os arquivos da pasta juntos. Ambos incluem as dependências e salvam os dados na mesma pasta do usuário.</p></details>
+          <details><summary>Por que o Windows pode mostrar um aviso ao abrir?</summary><p>Uma versão sem assinatura digital ou com poucos downloads pode acionar o SmartScreen. Confira a origem na página oficial do projeto e o checksum da versão antes de decidir executar. Não é necessário desativar a proteção do Windows.</p></details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"><div class="container footer-inner"><a class="brand" href="#inicio"><img src="assets/studytonks.svg" width="29" height="29" alt=""><span>Studytonks<span class="brand-dot">.</span></span></a><p>Learn. Track. Master.</p><div><span>Feito para aprender, no seu ritmo.</span><a href="https://github.com/devFelipeMRB/studytonks" target="_blank" rel="noopener noreferrer" aria-label="Studytonks no GitHub"><svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.86c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .08 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03A9.57 9.57 0 0 1 12 6.83c.85 0 1.71.11 2.51.34 1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg></a></div></div></footer>
+  </body>
+</html>

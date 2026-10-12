@@ -1,0 +1,11 @@
+Studytonks — Learn. Track. Master.
+
+Este instalador inclui o aplicativo e todas as bibliotecas necessárias, inclusive Python e Qt. Você não precisa instalar Python, executar comandos ou estar conectado à internet para usar o Studytonks.
+
+O Studytonks será instalado somente para seu usuário. Não exige privilégios de administrador.
+
+Suas matérias, anotações, avaliações e backups ficam em %APPDATA%\Studytonks. Atualizar ou desinstalar o aplicativo não apaga essa pasta. Faça um backup pelas Configurações antes de atualizar, como precaução.
+
+Iniciar junto com o Windows é uma opção das Configurações, ativada somente com sua confirmação. O instalador não ativa essa opção.
+
+Os lembretes locais funcionam enquanto o aplicativo estiver em execução, inclusive minimizado na bandeja. Ao sair completamente, ele deixa de emitir lembretes.
